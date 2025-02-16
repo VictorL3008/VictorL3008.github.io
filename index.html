@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victor Leal - Data Analyst</title>
+    <!-- Importar la fuente Roboto Condensed desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap');
+        body {
+            background: linear-gradient(135deg, #2F4F4F, #696969);
+            color: #D4D4C4;
+            font-family: 'Roboto Condensed', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+        header {
+            width: 100%;
+            padding: 10px; /* Reducir el padding del header */
+            background: linear-gradient(to right, rgba(27, 31, 29, 0.8), rgba(27, 31, 29, 0.8)), linear-gradient(to right, #1B1F1D, #1B1F1D);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            width: 200px; /* Reducir el tamaño del logo */
+            height: auto;
+            margin-left: 20px;
+        }
+        nav {
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-around;
+        }
+        nav a {
+            color: #D4D4C4;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+            font-family: 'Roboto Condensed', sans-serif; /* Nueva fuente para los enlaces */
+            font-weight: 400; /* Peso de la fuente (normal) */
+            padding: 10px 20px; /* Add padding for button effect */
+            border: none; /* Remove border */
+            background: rgba(255, 255, 255, 0.1); /* Transparent background */
+            backdrop-filter: blur(10px); /* Blurred background effect */
+            border-radius: 5px; /* Slightly rounded corners */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease; /* Add transition for hover effect */
+        }
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2); /* Slightly increase background opacity on hover */
+            color: #FFFFFF; /* Change text color on hover */
+            transform: translateY(-5px); /* Move the button up slightly on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Reducir el tamaño mínimo de las columnas */
+            gap: 20px;
+            padding: 20px;
+            margin-top: 150px; /* Mover las tarjetas más abajo */
+            width: 100%;
+            max-width: 800px; /* Reducir el área de visualización */
+            justify-content: center; /* Centrar la grid */
+        }
+        .project-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            padding: 10px; /* Reducir el padding de las tarjetas */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for hover effect */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a small shadow below the project cards */
+        }
+        .project-card img {
+            width: 100%;
+            height: 200px; /* Establecer una altura fija para las imágenes */
+            object-fit: cover; /* Asegurarse de que las imágenes se ajusten al contenedor */
+            border-radius: 10px;
+        }
+        .project-card:hover {
+            transform: translateY(-10px); /* Move the card up slightly on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Increase the shadow on hover */
+        }
+        .project-card a {
+            text-decoration: none; /* Remove underline from links */
+            color: inherit; /* Inherit text color from parent */
+        }
+        footer {
+            width: 100%;
+            padding: 10px;
+            background-color: #1B1F1D;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            z-index: 1000;
+        }
+        .logoFooter {
+            width: 250px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="images/logo.png" alt="Victor Leal" class="logo"></a>
+        <nav>
+            <a href="aboutme.html">About me</a>
+            <a href="index.html">Projects</a> <!-- Actualizar el enlace de Projects -->
+            <a href="contact.html">Let's connect</a>
+        </nav>
+    </header>
+
+    <div class="projects-grid">
+        <div class="project-card">
+            <a href="project1.html">
+                <img src="images/project1_card.png" alt="Project 1">
+                <h3>Project 1</h3>
+                <p>Netflix's Analysis</p>
+            </a>
+        </div>
+        <div class="project-card">
+            <a href="project2.html">
+                <img src="images/project2_card.png" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>Healthcare EDA Python.</p>
+            </a>
+        </div>
+        <div class="project-card">
+            <a href="project3.html">
+                <img src="images/project3_card.png" alt="Project 3">
+                <h3>Project 3</h3>
+                <p>Sales Analysis.</p>
+            </a>
+        </div>
+        <!-- Add more project cards as needed -->
+    </div>
+    
+    <footer>
+        <p><img src="images/logo.png" alt="Victor Leal" class="logoFooter"></p>
+    </footer>
+
+    <script>
+        document.querySelector('nav a[href="aboutme.html"]').addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = 'aboutme.html';
+        });
+    </script>
+</body>
+</html>

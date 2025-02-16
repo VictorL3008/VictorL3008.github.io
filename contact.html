@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Victor Leal</title>
+    <!-- Importar la fuente Roboto Condensed desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap');
+        body {
+            background: linear-gradient(135deg, #2F4F4F, #696969);
+            color: #D4D4C4;
+            font-family: 'Roboto Condensed', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            overflow-y: auto; /* Habilitar el desplazamiento vertical */
+        }
+        header {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to right, rgba(27, 31, 29, 0.8), rgba(27, 31, 29, 0.8)), linear-gradient(to right, #1B1F1D, #1B1F1D);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            width: 200px;
+            height: auto;
+            margin-left: 20px;
+        }
+        nav {
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-around;
+        }
+        nav a {
+            color: #D4D4C4;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+            font-family: 'Roboto Condensed', sans-serif; /* Fuente para los enlaces */
+            font-weight: 400;
+            padding: 10px 20px; /* Add padding for button effect */
+            border: none; /* Remove border */
+            background: rgba(255, 255, 255, 0.1); /* Transparent background */
+            backdrop-filter: blur(10px); /* Blurred background effect */
+            border-radius: 5px; /* Slightly rounded corners */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease; /* Add transition for hover effect */
+        }
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2); /* Slightly increase background opacity on hover */
+            color: #FFFFFF; /* Change text color on hover */
+            transform: translateY(-5px); /* Move the button up slightly on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+        }
+        footer {
+            width: 100%;
+            padding: 1px; /* Further reduce the padding to make the footer smaller */
+            background-color: #1B1F1D;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            z-index: 1000;
+        }
+        .logoFooter {
+            width: 200px; /* Increase the width of the logo */
+            height: auto;
+        }
+        .content {
+            margin-top: 180px; /* Increase the margin-top to move the content further down */
+            padding: 20px;
+            max-width: 800px;
+            text-align: center;
+            overflow-y: auto; /* Habilitar el desplazamiento vertical en el contenido */
+            overflow-x: hidden; /* Disable horizontal scrolling */
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-height: 400px; /* Limitar la altura del formulario de contacto */
+            overflow-y: auto; /* Habilitar el desplazamiento vertical en el formulario de contacto */
+            margin-left: 20px; /* Mover el formulario un poco a la derecha */
+            width: 100%; /* Ensure the form takes full width */
+        }
+        .contact-form input, .contact-form textarea {
+            width: 90%; /* Increase the width of the input fields */
+            padding: 15px; /* Increase padding for larger input fields */
+            margin: 10px 0;
+            border: 1px solid #D4D4C4;
+            border-radius: 5px;
+            background-color: transparent; /* Fondo transparente */
+            color: #D4D4C4;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+        .contact-form input::placeholder, .contact-form textarea::placeholder {
+            color: #D4D4C4;
+            opacity: 0.7;
+        }
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #D4D4C4;
+            color: #1B1F1D;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .contact-form button:hover {
+            background-color: #A3B18A;
+        }
+        .notification {
+            display: none;
+            position: fixed;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.2em;
+            text-align: center;
+            z-index: 1001;
+            transition: top 0.5s ease-in-out;
+        }
+        .notification.show {
+            top: 20px;
+        }
+        .project-card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a small shadow below the project cards */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for hover effect */
+        }
+        .project-card:hover {
+            transform: translateY(-10px); /* Move the card up slightly on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Increase the shadow on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Logo -->
+        <a href="index.html"><img src="images/logo.png" alt="Victor Leal" class="logo"></a>
+        <!-- Menú de navegación -->
+        <nav>
+            <a href="aboutme.html">About me</a>
+            <a href="index.html">Projects</a> <!-- Actualizar el enlace de Projects -->
+            <a href="contact.html">Let's connect</a>
+        </nav>
+    </header>
+
+    <!-- Contenido de la página "Contact" -->
+    <div class="content">
+        <h1>Let's Connect</h1>
+        <p>
+            If you'd like to get in touch, feel free to reach out using the form below or through my email.
+        </p>
+        <!-- Formulario de contacto -->
+        <form class="contact-form" action="https://formspree.io/f/mvgzbnlz" method="POST" onsubmit="showNotification(event)">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        Message sent successfully!
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p><img src="images/logo.png" alt="Victor Leal" class="logoFooter"></p>
+    </footer>
+
+    <script>
+        // Habilitar el desplazamiento del formulario de contacto con la rueda del ratón
+        const contactForm = document.querySelector('.contact-form');
+        let isScrolling = false;
+        let scrollTimeout;
+
+        contactForm.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            if (!isScrolling) {
+                isScrolling = true;
+                contactForm.scrollBy({
+                    top: e.deltaY,
+                    behavior: 'smooth'
+                });
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    isScrolling = false;
+                }, 100);
+            }
+        });
+
+        // Mostrar la notificación cuando se envía el formulario
+        function showNotification(event) {
+            event.preventDefault();
+            const notification = document.getElementById('notification');
+            notification.classList.add('show');
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+
+            // Simular el envío del formulario
+            setTimeout(() => {
+                event.target.submit();
+            }, 500);
+        }
+
+        // Habilitar el script cuando el ratón se mueve sobre el contenido del formulario
+        document.querySelector('.contact-form').addEventListener('mouseenter', () => {
+            contactForm.addEventListener('wheel', handleScroll);
+        });
+
+        document.querySelector('.contact-form').addEventListener('mouseleave', () => {
+            contactForm.removeEventListener('wheel', handleScroll);
+        });
+
+        function handleScroll(e) {
+            e.preventDefault();
+            if (!isScrolling) {
+                isScrolling = true;
+                contactForm.scrollBy({
+                    top: e.deltaY,
+                    behavior: 'smooth'
+                });
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    isScrolling = false;
+                }, 100);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 3 - Victor Leal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap');
+        body {
+            background: linear-gradient(135deg, #2F4F4F, #696969);
+            color: #D4D4C4;
+            font-family: 'Roboto Condensed', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+        header {
+            width: 100%;
+            padding: 10px;
+            background: linear-gradient(to right, rgba(27, 31, 29, 0.8), rgba(27, 31, 29, 0.8)), linear-gradient(to right, #1B1F1D, #1B1F1D);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            width: 200px;
+            height: auto;
+            margin-left: 20px;
+        }
+        nav {
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-around;
+        }
+        nav a {
+            color: #D4D4C4;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 400;
+            padding: 10px 20px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+        }
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #FFFFFF;
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .content {
+            margin-top: 150px;
+            padding: 20px;
+            width: 100%;
+            max-width: 1200px; /* Ajusta el ancho máximo del contenedor */
+        }
+        .project-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta el tamaño mínimo de las columnas */
+            gap: 180px; /* Espacio entre las imágenes */
+        }
+        .project-image {
+            width: 150%; /* Ajusta el ancho al 150% del contenedor */
+            height: auto; /* Mantiene la proporción de la imagen */
+            border-radius: 10px; /* Opcional: añade bordes redondeados */
+            margin: 20px 0; /* Añade margen vertical */
+        }
+        .github-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #D4D4C4;
+            font-size: 1.2em;
+            margin-top: 5px;
+        }
+        .github-link img {
+            width: 24px;
+            height: auto;
+            margin-right: 10px;
+        }
+        footer {
+            width: 100%;
+            padding: 10px;
+            background-color: #1B1F1D;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            z-index: 1000;
+        }
+        .logoFooter {
+            width: 250px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="images/logo.png" alt="Victor Leal" class="logo"></a>
+        <nav>
+            <a href="aboutme.html">About me</a>
+            <a href="index.html">Projects</a>
+            <a href="contact.html">Let's connect</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h1>Project 3</h1>
+        <p>This project analyzes the performance of a cafeteria by focusing on three key areas: sales performance, stock management, and staff costs. Using SQL for data processing and PowerBI for visualization, the analysis provides actionable insights to optimize operations and improve profitability.</p>
+        <h2>Project Images</h2>
+        <div class="project-images">
+            <img src="images/project3_image1.png" alt="Project 3 Image 1" class="project-image">
+            <img src="images/project3_image2.png" alt="Project 3 Image 2" class="project-image">
+            <img src="images/project3_image3.png" alt="Project 3 Image 3" class="project-image">
+        </div>
+        <!-- Add more content as needed -->
+        <a href="https://github.com/VictorL3008/Sales_Analysis" class="github-link">
+            <img src="images/github_icon.png" alt="GitHub Icon">View on GitHub
+        </a>
+    </div>
+    <footer>
+        <p><img src="images/logo.png" alt="Victor Leal" class="logoFooter"></p>
+    </footer>
+</body>
+</html>
