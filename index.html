@@ -19,6 +19,7 @@
             align-items: center;
             justify-content: flex-start;
             min-height: 100vh;
+            overflow-y: auto; /* Enable vertical scrolling */
         }
         header {
             width: 100%;
@@ -95,19 +96,6 @@
             text-decoration: none; /* Remove underline from links */
             color: inherit; /* Inherit text color from parent */
         }
-        footer {
-            width: 100%;
-            padding: 10px;
-            background-color: #1B1F1D;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            z-index: 1000;
-        }
-        .logoFooter {
-            width: 250px;
-            height: auto;
-        }
     </style>
 </head>
 <body>
@@ -144,10 +132,6 @@
         </div>
         <!-- Add more project cards as needed -->
     </div>
-    
-    <footer>
-        <p><img src="logo.png" alt="Victor Leal" class="logoFooter"></p>
-    </footer>
 
     <script>
         document.querySelector('nav a[href="aboutme.html"]').addEventListener('click', function(event) {
