@@ -19,7 +19,7 @@
             align-items: center;
             justify-content: flex-start;
             min-height: 100vh;
-            overflow-y: auto; /* Habilitar el desplazamiento vertical */
+            overflow-y: auto; /* Enable vertical scrolling */
         }
         header {
             width: 100%;
@@ -61,19 +61,6 @@
             color: #FFFFFF; /* Change text color on hover */
             transform: translateY(-5px); /* Move the button up slightly on hover */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
-        }
-        footer {
-            width: 100%;
-            padding: 1px; /* Further reduce the padding to make the footer smaller */
-            background-color: #1B1F1D;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            z-index: 1000;
-        }
-        .logoFooter {
-            width: 200px; /* Increase the width of the logo */
-            height: auto;
         }
         .content {
             margin-top: 180px; /* Increase the margin-top to move the content further down */
@@ -153,7 +140,7 @@
 <body>
     <header>
         <!-- Logo -->
-        <a href="index.html"><img src="logo.png" alt="Victor Leal" class="logo"></a>
+        <a href="index.html"><img src="images/logo.png" alt="Victor Leal" class="logo"></a>
         <!-- Menú de navegación -->
         <nav>
             <a href="aboutme.html">About me</a>
@@ -181,11 +168,6 @@
     <div class="notification" id="notification">
         Message sent successfully!
     </div>
-
-    <!-- Footer -->
-    <footer>
-        <p><img src="logo.png" alt="Victor Leal" class="logoFooter"></p>
-    </footer>
 
     <script>
         // Habilitar el desplazamiento del formulario de contacto con la rueda del ratón
